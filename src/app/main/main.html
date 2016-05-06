@@ -1,0 +1,34 @@
+<div class="container-fluid" id="school-board">
+<h1>Code Astra School</h1>
+<div class="row">
+  <div id="klasses" class="col-md-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Classes</b>
+          <a type="button" href="#" class="pull-right" data-toggle="modal" data-target="#new_klass">
+            <i class="fa fa-plus-square"></i>
+          </a>
+        </div>
+        <div id="klasses-list" class="list-group" ng-repeat="klass in main.klassResp.klasses">
+            <a id="klass_{{klass.id}}" class="list-group-item klass-item" ng-click="main.showSections(klass.id)" >{{klass.name}}</a>
+         </div>
+    </div>
+  </div>
+  <div id="sections" class="col-md-2">
+    <div class="panel panel-info">
+        <div class="panel-heading">
+          <b>Sections</b>
+          <a type="button" href="#" class="pull-right" data-toggle="modal" data-target="#new_klass">
+            <i class="fa fa-plus-square"></i>
+          </a>
+        </div>
+        <div id="sections-list" class="list-group" ng-repeat="section in main.sectionResp.sections">
+            <a id="section_1" class="list-group-item section-item" ng-click="" >{{section.name}}</a>
+         </div>
+    </div>
+  </div>
+  <div id="students" class="col-md-4"></div>
+  <div id="student-details" class="col-md-4"></div>
+</div>
+  
+</div>

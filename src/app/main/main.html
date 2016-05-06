@@ -23,12 +23,25 @@
           </a>
         </div>
         <div id="sections-list" class="list-group" ng-repeat="section in main.sectionResp.sections">
-            <a id="section_1" class="list-group-item section-item" ng-click="" >{{section.name}}</a>
+            <a id="section_1" class="list-group-item section-item" ng-click="main.showsStudent(section.id)" >{{section.name}}</a>
          </div>
     </div>
   </div>
-  <div id="students" class="col-md-4"></div>
+  <div id="students" class="col-md-4">
+    <div class="panel panel-info">
+      <div class="panel-heading">
+        <b>Students</b>
+        <a type="button" href="#" class="pull-right" data-toggle="modal" data-target="#new_klass">
+          <i class="fa fa-plus-square"></i>
+        </a>
+      </div>
+      <div id="students-list" class="list-group" ng-repeat="student in main.studentResp.students">
+          <a id="section_{{student.id}}" class="list-group-item students-item" ng-click="" >{{student.name}}</a>
+       </div>
+    </div>
+  </div>
+</div>
   <div id="student-details" class="col-md-4"></div>
 </div>
-  
+
 </div>

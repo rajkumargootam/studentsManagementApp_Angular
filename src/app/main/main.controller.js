@@ -28,8 +28,8 @@
       vm.sectionResp = resourceObj.get();
     }
       vm.showsStudent = function(sectionId){
-        // vm.studentResp=null;
-        // vm.studentDetailResp=null;
+        vm.studentResp=null;
+        vm.studentDetailResp=null;
         vm.sectionId = sectionId;
        var resourceObj = $resource('http://pure-retreat-73401.herokuapp.com/api/v1/klasses/'+vm.klassId+'/sections/'+vm.sectionId+'/students.json',{
          access_token:'TLVMLZCHEBSBAVTQJDV5LVTB7E8S74Q4'
@@ -95,13 +95,14 @@
       var resourceObj = $resource('http://pure-retreat-73401.herokuapp.com/api/v1/klasses/'+vm.klassId+'/sections/'+vm.sectionId+'/students.json',{
         access_token:'TLVMLZCHEBSBAVTQJDV5LVTB7E8S74Q4'
       });
-      var resp = resourceObj.save({name:vm.newStudentName});
+      var resp = resourceObj.save(vm.newStudentInfo);
       resp.$promise.then(function(resData){
             console.log('Student added');
             console.log(resData);
-            vm.studentResp = resourceObj.get();
+            vm.sectionResp = resourceObj.get();
+            angular.element('#new_student').modal('hide')
           },function(){
-            console.log('Unable to add Student');
+            console.log('Unable to add student');
           });
      }
     init();

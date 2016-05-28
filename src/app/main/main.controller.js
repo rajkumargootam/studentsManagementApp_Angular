@@ -105,6 +105,21 @@
             console.log('Unable to add student');
           });
      }
+
+    //  vm.EditStudentDetails = function(){
+    //   var resourceObj = $resource('http://pure-retreat-73401.herokuapp.com/api/v1/klasses/'+vm.klassId+'/sections/'+vm.sectionId+'/students.json',{
+    //     access_token:'TLVMLZCHEBSBAVTQJDV5LVTB7E8S74Q4'
+    //   });
+    //   var resp = resourceObj.save(vm.newStudentInfo);
+    //   resp.$promise.then(function(resData){
+    //         console.log('Student added');
+    //         console.log(resData);
+    //         vm.sectionResp = resourceObj.get();
+    //         angular.element('#new_student').modal('hide')
+    //       },function(){
+    //         console.log('Unable to add student');
+    //       });
+    //  }
     init();
   }
 })();
